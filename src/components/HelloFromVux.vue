@@ -1,7 +1,8 @@
 <template>
   <div>
     <div class="vux-demo">
-      <img class="logo" src="../assets/vux_logo.png">
+      <!-- <img class="logo" src="../assets/vux_logo.png"> -->
+      <model-stl :src="modelSrc"></model-stl>
       <h1> </h1>
     </div>
     <group title="cell demo">
@@ -12,11 +13,13 @@
 
 <script>
 import { Group, Cell } from 'vux';
+import { ModelStl } from 'vue-3d-model';
 
 export default {
   components: {
     Group,
-    Cell
+    Cell,
+    ModelStl,
   },
   data() {
     return {
@@ -24,9 +27,12 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello World!'
+      msg: 'Hello World!',
+      modelSrc: 'static/右肾脏.stl',
+      width: 1500,
+      height: 800,
     };
-  }
+  },
 };
 </script>
 
@@ -36,6 +42,6 @@ export default {
 }
 .logo {
   width: 100px;
-  height: 100px
+  height: 100px;
 }
 </style>
